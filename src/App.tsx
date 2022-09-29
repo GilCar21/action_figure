@@ -3,6 +3,7 @@ import { createGlobalStyle} from 'styled-components'
 import { Menu } from "./components/Menu"
 import { Main } from "./components/Main"
 import { Footer } from "./components/Footer"
+import { useState } from "react"
 
 const GlobalStyled = createGlobalStyle`
   
@@ -24,13 +25,14 @@ const GlobalStyled = createGlobalStyle`
 `
 
 function App() {
+  const [move, setMove] = useState(0)
 
   return (
     <>
       <GlobalStyled />
-      <Header />
-      <Menu />
-      <Main />
+      <Header setMove={setMove}/>
+      <Menu setMove={setMove}/>
+      <Main move={move} setMove={setMove}/>
       <Footer />
     </>
   )

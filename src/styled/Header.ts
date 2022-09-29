@@ -16,8 +16,69 @@ export const HeaderContent = styled.div`
     .search{
         padding: 0 2rem;
         width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+
+        .OpenSearch{
+            cursor: pointer;
+            position: absolute;
+            left: 2.5rem;
+            visibility: visible;
+            opacity: 1;
+        }
+        .BsSearch{
+            cursor: pointer;
+            position: absolute;
+            left: 2.5rem;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .close{
+            cursor: pointer;
+            position: absolute;
+            left: 2.5rem;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .2s linear;
+        }
         input{
-            display: none;
+            visibility: hidden;
+            opacity: 0;
+            border: solid 1px #B652E5;
+            border-radius: 1rem;
+            width: 0%;
+            height: 2.5rem;
+            padding: 0.5rem 0.5rem 0.5rem 2.2rem;
+            font-weight: 400;
+            transition: visibility .2s linear, opacity .2s linear, width .2s linear;
+        }
+
+    }
+    .search.active{
+        padding: 0 2rem;
+        width: 30%;
+        .OpenSearch{
+            visibility: hidden;
+            opacity: 0;
+        }
+        .BsSearch{
+            visibility: visible;
+            opacity: 1;
+        }
+        .close{
+            visibility: visible;
+            opacity: 1;
+            left: 75%;
+        }
+        input{
+            visibility: visible;
+            width: 90%;
+            opacity: 1;
+            &:focus{
+                border: solid 1px #B652E5;
+            }
         }
     }
 
