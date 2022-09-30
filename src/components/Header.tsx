@@ -18,14 +18,14 @@ export function Header({setMove}:HeaderProps) {
 
     function Buscar(){
         
-        const BuscaNameAnime = figures.filter(figure => figure.nameAnime.startsWith(busca))      
+        const BuscaNameAnime = figures.filter(figure => figure.nameAnime.toLowerCase().includes(busca.toLowerCase()))      
         if(BuscaNameAnime.length > 0){
             let aux = BuscaNameAnime.at(0)?.position as number
             console.log(aux)
             setMove((prev )=> prev = -(aux-Math.round(figures.length/2))*206)
         }
 
-        const BuscaNamePerson = figures.filter(figure => figure.namePerson.startsWith(busca))
+        const BuscaNamePerson = figures.filter(figure => figure.namePerson.toLowerCase().includes(busca.toLowerCase()))
         if(BuscaNamePerson.length > 0){
             let aux = BuscaNamePerson.at(0)?.position as number
             setMove((prev )=> prev = -(aux-Math.round(figures.length/2))*206)
