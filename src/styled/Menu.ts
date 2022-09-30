@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MenuContent = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background: #450E5E;
     color: #fff;
@@ -12,6 +12,9 @@ export const MenuContent = styled.div`
     
     .anime{
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .title{
@@ -40,10 +43,10 @@ export const MenuContent = styled.div`
         opacity: ${props => props.theme === 'visible' ? 1 : 0};
         text-align: center;
         margin-top: 5px;
-        translate: -37.5%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        translate: 0 57%;
         padding: 25px;
         gap: 10px;
         z-index: 10;
@@ -57,6 +60,10 @@ export const MenuContent = styled.div`
         border-radius: 20px;
 
         transition: visibility 0.3s linear,opacity 0.3s linear;
+
+        @media screen and (max-width:500px){
+            width: 90vw;
+        }
 
         &::before{
             position: absolute;

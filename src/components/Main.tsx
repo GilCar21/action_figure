@@ -18,14 +18,16 @@ import { Carousel } from './Corousel'
 
 interface MainProps{
     setMove: (value: SetStateAction<number>) => void;
+    setAdd: (value: SetStateAction<number>) => void;
     move: number;
 }
 
-export function Main({setMove, move}:MainProps) {
+export function Main({setMove,setAdd, move}:MainProps) {
     
     
     const tamanho = figures.length 
     const metadeTamanho = Math.round(tamanho/2)
+    
     const [amount, setAmount] = useState(1)
     const [isTrasitionNone, setIsTramsitionNone ] = useState(false)
     const [startPosition, setStartPosition] = useState(0)
@@ -42,7 +44,6 @@ export function Main({setMove, move}:MainProps) {
         if (move-startPosition === 0) {
 
             setSelect(prev => prev = metadeTamanho)
-            console.log(select)
 
         } else if (((move-startPosition) < metadeTamanho*206) && ((move-startPosition) > (tamanho%2 ===0 ? -metadeTamanho*206-1: -metadeTamanho*206))) {
 
@@ -65,10 +66,8 @@ export function Main({setMove, move}:MainProps) {
                 setIsTramsitionNone(prev => prev = true)
             },400)
             setTimeout(()=> setIsTramsitionNone(prev => prev = false),450)
-            console.log(move)
         }
         
-        console.log(move-startPosition)
     }, [move])
 
     function moveRigth() {
@@ -115,7 +114,7 @@ export function Main({setMove, move}:MainProps) {
                         {figures.map(figure => {
                             if (select === figure.position) {
                                 return (
-                                    <div className='description'>
+                                    <div className='description' key={figure.position}>
                                         <h4>Action Figure {`${figure.namePerson} ${figure.nameAnime}`} 
                                         </h4>
                                         <p>{figure.description} </p>
@@ -135,7 +134,7 @@ export function Main({setMove, move}:MainProps) {
                         {figures.map(figure =>{
                             if(select === figure.position){
                                 return(
-                                    <strong className='price'>{figure.price * amount}R$</strong>
+                                    <strong key={figure.position} className='price'>{figure.price * amount}R$</strong>
                                 )
                             }
                         })}
@@ -151,7 +150,7 @@ export function Main({setMove, move}:MainProps) {
                             />
                         </div>
 
-                        <img className='card' src={card} alt="carrinho" />
+                        <img onClick={()=>setAdd(prev => prev= prev+amount)} className='card' src={card} alt="carrinho" />
 
                         <div className='circle'></div>
 

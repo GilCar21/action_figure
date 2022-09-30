@@ -23,16 +23,34 @@ export const MainContent = styled.div`
         align-items: center;
         width: 100%;
         margin-top: 3rem;
+        @media screen and (max-width:900px){
+            justify-content: center;
+            position: relative;
+        }
 
         h2{
             font-weight: 400;
-            font-size: 80px;
-            line-height: 60px;
+            font-size: 5rem;
+            line-height: 3.75rem;
             width: 30%;
+            @media screen and (max-width:1280px){
+                font-size: 4rem;
+                line-height: 3rem;
+            }
+            @media screen and (max-width:900px){
+                position: absolute;
+                font-size: 6rem;
+                line-height: 4rem;
+                translate: -42%;
+                bottom: 8rem;
+                z-index: 0;
+                opacity: 0.2;
+            }
+            @media screen and (max-width:500px){
+                display: none;
+            }
             span{
                 font-weight: 700;
-                font-size: 72px;
-                line-height: 60px;
                 color: #8280FF;
 
                 text-shadow: -4px 3px  #fff;
@@ -45,11 +63,24 @@ export const MainContent = styled.div`
             justify-content: center;
             width: 40%;
             height: 24rem;
+            @media screen and (max-width:900px){
+                width: 70%;
+            }
+            @media screen and (max-width:500px){
+             width: 80%;
+            }
+
             .select{
                 display: flex;
                 align-items: center;
                 width: 60%;
                 margin: 0 auto;
+                @media screen and (max-width:1280px){
+                    width: 100%;
+                }
+                @media screen and (max-width:900px){
+
+                }
                 .btn{
                     border: none;
                     background: transparent;
@@ -78,7 +109,10 @@ export const MainContent = styled.div`
             width: 30%;
             background: #841BB6;
             border-radius: 30px;
-
+            @media screen and (max-width:900px){
+                display: none;
+            }
+            
             h3{
                 font-weight: 500;
                 font-size: 20px;
@@ -92,7 +126,11 @@ export const MainContent = styled.div`
                 border-radius: 30px;
                 padding: 1.25rem;
                 color: #CDC9CF;
-                height: 16rem;
+                height: 18rem;
+                @media screen and (max-width:1280px){
+                    overflow-y: scroll;
+                }
+                
 
                 h4{
                     border-bottom: 1px solid #CDC9CF;
@@ -114,6 +152,7 @@ export const MainContent = styled.div`
                     font-size: 15px;
                     line-height: 18px;
                     margin-top: 1rem;
+                    height: 100%;
                 }
             }
         }
@@ -145,6 +184,9 @@ export const MainContent = styled.div`
                 background: #F0F0F0;
                 box-shadow: 2px -32px 10px #300843;
                 z-index: -1;
+                @media screen and (max-width:32rem){
+                    width: 100vw;
+                }
             }
 
             strong{
@@ -178,6 +220,10 @@ export const MainContent = styled.div`
                     color: #000000;
                 }
             }
+            img{
+                cursor: pointer;
+                z-index: 5;
+            }
            
 
         }
@@ -191,6 +237,9 @@ export const MainContent = styled.div`
         top: 18.16%;
 
         opacity: 0.5;
+        @media screen and (max-width:650px){
+            display: none;
+        }
     }
     .background3{
         position: absolute;
@@ -198,6 +247,9 @@ export const MainContent = styled.div`
         top: 30.45%;
 
         opacity: 0.3;
+        @media screen and (max-width:650px){
+            display: none;
+        }
         
     }
     .background2{
@@ -207,11 +259,17 @@ export const MainContent = styled.div`
 
         opacity: 0.6;
         transform: rotate(45deg);
+        @media screen and (max-width:650px){
+            display: none;
+        }
     }
     .background4{
         position: absolute;
         right: 0;
         top: 10.04%;
+        @media screen and (max-width:650px){
+            display: none;
+        }
     }
 
 `

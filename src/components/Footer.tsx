@@ -21,6 +21,12 @@ const FooterContent = styled.footer`
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media screen and (max-width:900px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width:450px){
+            grid-template-columns: 1fr ;
+        }
 
         div{
             display: flex;
@@ -38,6 +44,17 @@ const FooterContent = styled.footer`
                 font-weight: 700;
                 font-size: 12px;
                 line-height: 1.5rem;
+            }
+        }
+    }
+    .creditos{
+        text-align: center;
+        margin-top: 1rem;
+        h3{
+            font-weight: 400;
+            font-size: 1rem;
+            strong{
+                font-weight: bold;
             }
         }
     }
@@ -74,6 +91,10 @@ export function Footer() {
 
                     <p>Assine e receba novdades semre em primeira mão:</p>
                 </div>
+            </div>
+            <div className="creditos">
+                <h3>Desenvolvedor: <strong>Gilberto Jorge</strong></h3>
+                <h3>Designer: <strong>Luis Fernado</strong></h3>
             </div>
         </FooterContent>
     )

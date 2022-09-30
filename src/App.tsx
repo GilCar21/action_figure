@@ -26,13 +26,14 @@ const GlobalStyled = createGlobalStyle`
 
 function App() {
   const [move, setMove] = useState(0)
+  const [add, setAdd] = useState(0)
 
   return (
     <>
       <GlobalStyled />
-      <Header setMove={setMove}/>
+      <Header setMove={setMove} add={add}/>
       <Menu setMove={setMove}/>
-      <Main move={move} setMove={setMove}/>
+      <Main move={move} setMove={setMove} setAdd={setAdd}/>
       <Footer />
     </>
   )
