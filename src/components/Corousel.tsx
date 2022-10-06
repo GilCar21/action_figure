@@ -2,16 +2,16 @@ import { figures } from "../figures"
 import { CarouselContent } from "../styled/Carousel";
 
 interface CorouselProps {
-    isTrasitionNone: boolean;
+    isTrasitionNoneCarousel: boolean;
     select: number;
-    move: number;
+    moveCarousel: number;
 }
 
-export function Carousel({ isTrasitionNone, select, move }: CorouselProps) {
+export function Carousel({ isTrasitionNoneCarousel, select, moveCarousel }: CorouselProps) {
 
     return (
-        <CarouselContent theme={move}>
-            <div className={`carousel ${isTrasitionNone ? 'trasitionMove' : ''}`} >
+        <CarouselContent theme={moveCarousel}>
+            <div className={`carousel ${isTrasitionNoneCarousel ? 'trasitionMove' : ''}`} >
 
                 {figures.map(figure => {
                     return (
@@ -19,7 +19,7 @@ export function Carousel({ isTrasitionNone, select, move }: CorouselProps) {
                             <div className={`figure ${figure.position === select ? 'select' : ''}`} >
 
                                 <img className='anime' src={figure.anime} alt="" />
-                                <img className={`person `} src={figure.person} alt="figurinha" />
+                                <img className={`person`} src={figure.person} alt="figurinha" />
                             </div>
                         </div>
                     )

@@ -15,48 +15,40 @@ export const HeaderContent = styled.div`
     }
 
     .search{
-        padding: 0 2rem;
+        padding: 0 1rem;
         display: flex;
+        gap: 0.4rem;
         align-items: center;
         justify-content: start;
-        position: relative;
         width: 365px;
         
         @media screen and (max-width:900px){
-            padding-right: 0;
             width: 30%;
         }
 
         .OpenSearch{
             cursor: pointer;
-            position: absolute;
-            left: 2.5rem;
-            visibility: visible;
-            opacity: 1;
+            display: block;
         }
         .BsSearch{
             cursor: pointer;
-            position: absolute;
-            left: 2.5rem;
-            visibility: hidden;
-            opacity: 0;
+            display: none;
         }
         .close{
             cursor: pointer;
-            position: absolute;
-            left: 2.5rem;
             visibility: hidden;
             opacity: 0;
             transition: all .2s linear;
+            margin-left: -.25rem;
         }
         input{
             visibility: hidden;
             opacity: 0;
-            border: solid 1px #B652E5;
+            border: solid 2px #B652E5;
             border-radius: 1rem;
             width: 0%;
             height: 2.5rem;
-            padding: 0.5rem 0.5rem 0.5rem 2.2rem;
+            padding: 0.5rem 0.5rem 0.5rem .5rem;
             font-weight: 400;
             transition: visibility .2s linear, opacity .2s linear, width .2s linear;
         }
@@ -68,20 +60,14 @@ export const HeaderContent = styled.div`
             width: 90%;
         }
         .OpenSearch{
-            visibility: hidden;
-            opacity: 0;
+            display: none;
         }
         .BsSearch{
-            visibility: visible;
-            opacity: 1;
+            display: block;
         }
         .close{
             visibility: visible;
             opacity: 1;
-            left: 82%;
-            @media screen and (max-width:900px){
-                left: 90%;
-            }
         }
         input{
             visibility: visible;
@@ -102,6 +88,7 @@ export const HeaderContent = styled.div`
         justify-content: end;
         gap: 2rem;
         height: 5rem;
+
 
         @media screen and (max-width:900px){
             width: 30%;
@@ -136,9 +123,13 @@ export const HeaderContent = styled.div`
             align-items: center;
             justify-content: center;
             width: 120px;
-            height: 100%;
+            height: 5rem;
             border-radius: 12px;
             position: relative;
+            z-index: 10;
+                &:hover{
+                    cursor: pointer;
+                }
             p{
                 position: absolute;
                 width: 15px;

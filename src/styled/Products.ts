@@ -93,7 +93,7 @@ export const MainContent = styled.div`
                     width: 42px;
                     height: 42px;
                 }
-                .person{
+                .spacePerson{
                     
                     width: 100%;
                 }
@@ -220,11 +220,68 @@ export const MainContent = styled.div`
                     color: #000000;
                 }
             }
-            img{
-                cursor: pointer;
+            .carrinhoAdd{
+                height: 4rem;
                 z-index: 5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: .5rem;
+                filter: drop-shadow(0 0 0.3rem #DBABF2);
+                
+                .card{
+                    display: flex;
+                    margin-top: 1rem;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    z-index: 5;
+                    opacity: 1;
+                    visibility: visible;
+                    height: 4rem;
+                    width: 4rem;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    transition: all .4s linear;
+
+                    svg{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        transition: all .4s linear;
+
+                    }
+                    p{
+                        opacity: 0;
+                        visibility: hidden;
+                        overflow: hidden;
+                        width: 0;
+                        color: #000000;
+                        font-weight: bold;
+                        transition: opacity .4s linear, visible 0.2s linear;
+                        transition-delay: .3s;
+
+                    }
+                }
+                .card.addcard{
+                    background: #841BB6;
+                    width: 15rem;
+                    border-radius: 2rem;
+                    svg{
+                        width: 0;
+                        height: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        width: 0;
+                        color: #000000;
+                    }
+                    p{
+                        opacity: 1;
+                        visibility: visible;
+                        width: auto;
+                        color: #000000;                        
+                    }
+                }
             }
-           
 
         }
 

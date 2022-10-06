@@ -62,14 +62,6 @@ export const CarouselContent = styled.div`
                 max-height: 140px;
                 opacity: 1;
                 filter: drop-shadow(0 3mm 2mm #450E5E99);
-                /* &::after{
-                    content: '';
-                    position: absolute;
-                    background: #240731;
-                    width: 100px;
-                    height: 10px;
-                    filter: blur(23px);
-                } */
             }
         }
         .figure.select{

@@ -42,19 +42,19 @@ export const MenuContent = styled.div`
         visibility:  ${props => props.theme};
         opacity: ${props => props.theme === 'visible' ? 1 : 0};
         text-align: center;
-        margin-top: 5px;
+        margin-top: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
         translate: 0 57%;
         padding: 25px;
         gap: 10px;
-        z-index: 10;
+        z-index: 20;
 
         color: #343036;
         position: absolute;
         width: 491px;
-        height: 350px;
+        height: auto;
 
         background: #F0F0F0;
         border-radius: 20px;
@@ -94,5 +94,18 @@ export const MenuContent = styled.div`
                 cursor: pointer;
             }
         }
+    }
+    .clickClose{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: #34303625;
+        z-index: 15;
+        display: none;
+    }
+    .clickClose.active{
+        display: block;
     }
 `
