@@ -93,6 +93,9 @@ export const HeaderContent = styled.div`
         @media screen and (max-width:900px){
             width: 30%;
         }
+        @media screen and (max-width:500px){
+            width: 40%;
+        }
 
         .login{
             color: #450E5E;
@@ -146,8 +149,8 @@ export const HeaderContent = styled.div`
                     border-top-right-radius: 0;
                     border-bottom-right-radius: 0;
             }
-            @media screen and (max-width:740px){
-                min-width: 75px;
+            @media screen and (max-width:900px){
+                width: 75px;
             }
         }
     }
