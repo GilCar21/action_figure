@@ -15,10 +15,21 @@ import { NavLink } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 
 const CreateGlobalStyled = createGlobalStyle`
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'Montserrat';
+    }
+    button{
+        font-family: 'Montserrat';
+    }
     body{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
     }
 `
 

@@ -43,14 +43,15 @@ export const ContentCard = styled.div`
         align-items: center;
         justify-content: space-between;
         gap: 2rem;
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
 
         .contentFigure{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: .1rem;
+            gap: 1rem;
 
             height: 100%;
             min-width: 190px;
@@ -74,7 +75,17 @@ export const ContentCard = styled.div`
                 p{
                     margin-top: -.5rem;
                     margin-bottom: .5rem;
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                    line-height: 18px;
                 }
+            }
+            strong{
+                margin-top: -.5rem;
+                font-weight: 700;
+                font-size: 1.25rem;
+                line-height: 18px;
             }
         }
 
@@ -92,9 +103,8 @@ export const ContentCard = styled.div`
 
                 p{
                     font-weight: 400;
-                    font-size: 24px;
-                    line-height: 29px;
-
+                    font-size: 1.5rem;
+                    line-height: 18px;
                     text-align: center;
 
                     color: #000000;
@@ -103,6 +113,7 @@ export const ContentCard = styled.div`
     }
     .contentFimCompra{
         width: 100%;
+        padding: 0 5%;
         background: #F0F0F0;
         filter: drop-shadow(0 -2mm 2mm #450E5E99);
         margin-top: 2rem;
@@ -110,7 +121,6 @@ export const ContentCard = styled.div`
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            padding: 0;
             max-width: 40rem;
             margin: 1rem auto 2rem;
             
@@ -133,7 +143,7 @@ export const ContentCard = styled.div`
             button{
                 border: 0;
                 background: #841BB6;
-                color: #CFC5D3;
+                color: #FFF;
                 width: 100%;
                 height: 3rem;
                 border-radius: 8px;
@@ -141,7 +151,13 @@ export const ContentCard = styled.div`
                 align-items: center;
                 justify-content: center;
                 font-weight: bolder;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                transition: all .2s;
+
+                &:hover{
+                    scale: 1.1;
+                    cursor: pointer;
+                }
             }
         }
 

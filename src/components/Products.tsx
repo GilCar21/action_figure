@@ -156,7 +156,7 @@ export function Products({ setMoveCarousel, moveCarousel, setAmount, amount }: P
                         {figures.map(figure => {
                             if (select === figure.position) {
                                 return (
-                                    <strong key={figure.position} className='price'>{figure.price * amount}R$</strong>
+                                    <strong key={figure.position} className='price'>R${figure.price * amount}</strong>
                                 )
                             }
                         })}

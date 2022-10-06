@@ -7,12 +7,14 @@ import { useState } from "react"
 const GlobalStyled = createGlobalStyle`
   
   *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
   }
   body, button, a{
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
   body{
     padding: 0;
