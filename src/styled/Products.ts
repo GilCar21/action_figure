@@ -82,22 +82,33 @@ export const MainContent = styled.div`
 
                 }
                 .btn{
-                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: solid 2px transparent;
                     background: transparent;
+                    border-radius: 50%;
                     padding: 1rem;
                     cursor: pointer;
+                    transition: all .4s linear;
                     z-index: 5;
+                    &:hover{
+                    border: solid 2px #fff;
+                    }
                 }
                 .arrowLeft{
+                    margin-left: -.3rem;
                     rotate: -90deg;
                     width: 42px;
                     height: 42px;
+                    
                 }
                 .spacePerson{
                     
                     width: 100%;
                 }
                 .arrowRigth{
+                    margin-right: -.3rem;
                     rotate: 90deg;
                     width: 42px;
                     height: 42px;
@@ -208,6 +219,10 @@ export const MainContent = styled.div`
                 img{
                     cursor: pointer;
                     z-index: 5;
+                    transition: all 0.4s linear;
+                    &:hover{
+                        scale: 1.1;
+                    }
                 }
 
                 p{
@@ -243,6 +258,10 @@ export const MainContent = styled.div`
                     background-color: #fff;
                     border-radius: 50%;
                     transition: all .4s linear;
+        
+                    &:hover{
+                        scale: 1.1;
+                    }
 
                     svg{
                         width: 2.5rem;

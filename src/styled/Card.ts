@@ -111,12 +111,18 @@ export const ContentCard = styled.div`
                 }
             }
     }
+    .contentFimCompraAux{
+        height: 150px;
+        margin-top: 2rem;
+    }
     .contentFimCompra{
+        position: fixed;
+        bottom: 0;
         width: 100%;
         padding: 0 5%;
         background: #F0F0F0;
+        z-index: 10;
         filter: drop-shadow(0 -2mm 2mm #450E5E99);
-        margin-top: 2rem;
         .fimCompra{
             display: flex;
             flex-direction: column;

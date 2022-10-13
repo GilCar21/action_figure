@@ -86,6 +86,7 @@ export function Cart() {
                     }
                 })}
             </div>
+            <div className='contentFimCompraAux'></div>
             <div className='contentFimCompra'>
                 <div className='fimCompra'>
                     <div className='total'>
