@@ -12,12 +12,18 @@ import { CyclesContext } from '../App'
 interface HeaderProps {
     setMoveCarousel: (value: SetStateAction<number>) => void;
 }
+interface Usertype {
+    name: string;
+    email: string;
+    password: string;
+  }
 
 export function Header({ setMoveCarousel }: HeaderProps) {
     const [active, setActive] = useState(false)
     const [busca, setBusca] = useState('')
+    const [activeUser, setActiveUser] = useState(false)
 
-    const { productsCard, cardActive, setCardActive } = useContext(CyclesContext)
+    const { productsCard, setCardActive, user, setUser } = useContext(CyclesContext)
 
     function handleKeyPress(event: KeyboardEvent<HTMLInputElement>) {
         if (event.key === "Enter") {
@@ -30,6 +36,7 @@ export function Header({ setMoveCarousel }: HeaderProps) {
             setActive(prev => prev = false)
         }
     }
+
 
     function Buscar() {
 
@@ -49,6 +56,20 @@ export function Header({ setMoveCarousel }: HeaderProps) {
         }
         setActive(false)
     }
+
+    if (user) {
+        <p>{user.name}</p>
+    } else {
+
+        <NavLink to="/login" title='login'>
+            <div className='login'>
+                <img src={login} alt="" />
+                <p>Olá, faça seu login ou cadastre-se <BiDownArrow size={15} /></p>
+            </div>
+        </NavLink>
+
+    }
+
 
     return (
         <HeaderContent >
@@ -75,10 +96,24 @@ export function Header({ setMoveCarousel }: HeaderProps) {
                 <img className='logo' src={logo} alt="" />
 
                 <div className='login_card'>
-                    <div className='login'>
-                        <img src={login} alt="" />
-                        <p>Olá, faça seu login ou cadastre-se <BiDownArrow size={15} /></p>
-                    </div>
+
+
+                    {user.email ?
+                        <div className={`logado ${activeUser === true ? 'active' : '' }`} onClick={()=> setActiveUser(prev => prev = !prev)}>
+                            <img src={login} alt="" />
+                            <p>{user.name} <BiDownArrow size={15} /></p>
+                            <div className='logout' onClick={() => setUser({} as Usertype)}>
+                                <p>logout</p>
+                            </div>
+                        </div>
+                        :
+                        <NavLink to="/login" title='login ou sign in'>
+                            <div className='login'>
+                                <img src={login} alt="" />
+                                <p>Olá, faça seu login ou cadastre-se <BiDownArrow size={15} /></p>
+                            </div>
+                        </NavLink>
+                    }
                     <NavLink to="/cart" title="cart">
                         <div className='card' onClick={() => setCardActive(prev => prev = true)}>
                             <BsCart3 size={24} color={'violet'} />

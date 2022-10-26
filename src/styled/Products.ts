@@ -347,5 +347,4 @@ export const MainContent = styled.div`
             display: none;
         }
     }
-
 `

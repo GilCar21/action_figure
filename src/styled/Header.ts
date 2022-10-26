@@ -96,7 +96,32 @@ export const HeaderContent = styled.div`
         @media screen and (max-width:500px){
             width: 40%;
         }
-
+        .logado{
+            color: #450E5E;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            height: 27px;
+            position: relative;
+            cursor: pointer;
+            .logout{
+                display: none;
+                left: .25rem;
+                position: absolute;
+                top: 2.5rem;
+                background: #fff;
+                border-radius: 8px;
+                p{
+                    padding: .5rem 1rem;
+                }
+                cursor: pointer;
+            }
+        }
+        .logado.active{
+                .logout{
+                    display: block;
+                }
+            }
         .login{
             color: #450E5E;
             display: flex;

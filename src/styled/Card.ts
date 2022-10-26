@@ -8,8 +8,29 @@ export const ContentCard = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    position: relative,;
     
 
+    .aviso{
+        position: absolute;
+        right: 0;
+        top: 8rem;
+        width: 0;
+        height: 3.2rem;
+        background: #d83147;
+        color: #F0F0F0;
+        font-weight: bolder;
+        padding: 0.5rem .75rem;
+        border-radius: 8px;
+        overflow: hidden;
+        visibility: hidden;
+        transition: width .3s linear, visibility .3s linear, position .3s linear;
+    }
+    .aviso.active{
+        right: 3rem;
+        width: 14rem;
+        visibility: visible;
+    }
     .header{
         width: 100%;
         height: 98px;

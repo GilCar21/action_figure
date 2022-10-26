@@ -35,13 +35,28 @@ const CreateGlobalStyled = createGlobalStyle`
 
 export function Cart() {
 
-    const { productsCard, setProductsCard } = useContext(CyclesContext)
+    const { productsCard, setProductsCard, user } = useContext(CyclesContext)
 
     let precoTotal = 0;
 
+    const [alert, setAlert] = useState(false)
+
+    function handleFimCompra(){
+        if(user.name){
+            console.log('ok')
+        }else {
+            setAlert( prev => prev = true)
+            setTimeout(()=> {
+                setAlert (prev => prev = false)
+            },3500)
+        }
+    }
+
     return (
+
         <ContentCard>
             <CreateGlobalStyled />
+            <div className={`aviso ${alert === true ? 'active' : ''}`}>Entre em uma conta para finalizar o pedido</div>
             <div className="header">
                 <div className='contentHeader'>
                     <NavLink to="/" title="AiOutlineClose">
@@ -96,7 +111,7 @@ export function Cart() {
                             <small>Em ate 5X s/ juros</small>
                         </div>
                     </div>
-                    <button>Finalizar pedido</button>
+                    <button onClick={handleFimCompra}>Finalizar pedido</button>
                 </div>
             </div>
         </ContentCard>
